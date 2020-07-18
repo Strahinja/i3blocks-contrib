@@ -34,7 +34,7 @@ case $layout in
         ;;
 esac
 
-echo "韛 " $layout
-echo "韛 " $layout
+echo $layout
+echo $layout
 echo $color
 
