@@ -22,19 +22,39 @@ layout=`setxkbmap -query | awk ' \
     /^variant/{variant=" ("$2")"} \
     END{printf("%s%s",layout,variant)}' | tr [a-z] [A-Z]`
 
+us_color=#aaaaff
+rs_color=#779977
+default_color=#aaaaaa
+
 case $layout in
     US)
-        color=#aaaaff
+        color=$us_color
         ;;
     RS)
-        color=#779977
+        color=$rs_color
         ;;
     *)
-        color=#aaaaaa
+        color=$default_color
         ;;
 esac
 
-echo "韛 " $layout
-echo "韛 " $layout
+case $BLOCK_BUTTON in
+    1) case $layout in
+	    US)
+		setxkbmap -layout rs
+		layout="RS"
+		color=$rs_color
+		;;
+	    *)
+		setxkbmap -layout us
+		layout="US"
+		color=$us_color
+	esac
+        ;;
+    *)
+esac
+
+echo $layout
+echo $layout
 echo $color
 
