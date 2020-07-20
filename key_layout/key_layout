@@ -38,6 +38,7 @@ case $layout in
         ;;
 esac
 
+<<<<<<< HEAD
 case $BLOCK_BUTTON in
     1) case $layout in
 	    US)
@@ -54,6 +55,8 @@ case $BLOCK_BUTTON in
     *)
 esac
 
+=======
+>>>>>>> 34852c3e462ecbbabeb110f368513dd791a063d8
 echo $layout
 echo $layout
 echo $color
